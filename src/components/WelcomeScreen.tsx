@@ -2,9 +2,6 @@ import React from "react";
 import { motion } from "framer-motion";
 import { Sparkles } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import exampleCard1 from "@/assets/example-card-1.png";
-import exampleCard2 from "@/assets/example-card-2.png";
-import exampleCard3 from "@/assets/example-card-3.png";
 import exampleCard4 from "@/assets/example-card-4.png";
 import exampleCard5 from "@/assets/example-card-5.png";
 import exampleCard6 from "@/assets/example-card-6.png";
@@ -13,6 +10,9 @@ import exampleCard8 from "@/assets/example-card-8.png";
 import exampleCard9 from "@/assets/example-card-9.png";
 import exampleCard10 from "@/assets/example-card-10.png";
 import exampleCard11 from "@/assets/example-card-11.png";
+import exampleCard12 from "@/assets/example-card-12.png";
+import exampleCard13 from "@/assets/example-card-13.png";
+import exampleCard14 from "@/assets/example-card-14.png";
 
 interface WelcomeScreenProps {
   onStart: () => void;
@@ -97,7 +97,7 @@ const WelcomeScreen: React.FC<WelcomeScreenProps> = ({ onStart }) => {
           ✨ Examples of AI-generated cards
         </p>
         <div className="flex gap-5 overflow-x-auto px-6 pb-4 snap-x snap-mandatory scrollbar-hide">
-          {[exampleCard1, exampleCard2, exampleCard4, exampleCard5, exampleCard6, exampleCard7, exampleCard8, exampleCard9, exampleCard10, exampleCard11].map((src, i) => (
+          {[exampleCard12, exampleCard13, exampleCard14, exampleCard4, exampleCard5, exampleCard6, exampleCard7, exampleCard8, exampleCard9, exampleCard10, exampleCard11].map((src, i) => (
             <motion.div
               key={i}
               className="flex-shrink-0 w-56 md:w-64 snap-center rounded-xl overflow-hidden shadow-lg border border-border"
