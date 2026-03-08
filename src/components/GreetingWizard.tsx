@@ -223,18 +223,36 @@ const GreetingWizard: React.FC<GreetingWizardProps> = ({ onSubmit, onBack }) => 
       {/* Progress */}
       <div className="w-full max-w-lg mb-8">
         <div className="flex gap-1.5">
-          {steps.map((_, i) => (
-            <div
+          {steps.map((label, i) => (
+            <button
               key={i}
+              type="button"
+              onClick={() => { if (i < step) setStep(i); }}
               className={`h-1.5 flex-1 rounded-full transition-colors ${
                 i <= step ? "bg-primary" : "bg-border"
-              }`}
+              } ${i < step ? "cursor-pointer hover:opacity-80" : "cursor-default"}`}
+              aria-label={`Go to step ${i + 1}: ${label}`}
             />
           ))}
         </div>
-        <p className="text-xs text-muted-foreground mt-2">
-          Step {step + 1} of {steps.length}
-        </p>
+        <div className="flex gap-2 mt-2 flex-wrap">
+          {steps.map((label, i) => (
+            <button
+              key={i}
+              type="button"
+              onClick={() => { if (i < step) setStep(i); }}
+              className={`text-xs transition-colors ${
+                i === step
+                  ? "text-primary font-semibold"
+                  : i < step
+                  ? "text-muted-foreground hover:text-primary cursor-pointer underline underline-offset-2"
+                  : "text-muted-foreground/50 cursor-default"
+              }`}
+            >
+              {label}
+            </button>
+          ))}
+        </div>
       </div>
 
       {/* Card */}
