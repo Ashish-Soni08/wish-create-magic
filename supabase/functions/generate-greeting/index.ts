@@ -33,7 +33,7 @@ DESIGN:
 - Below the name, write "Happy Women's Day" in bold elegant serif typography.
 - Below that, write "${relationship}" in smaller italic script.
 - Below the wreath, write "${traitStr}" in flowing cursive script.
-${message ? `- Somewhere on the card, subtly include: "${message}"` : ""}
+${message ? `- At the bottom of the card, write EXACTLY this text with no spelling changes: "${message}"` : ""}
 
 STYLE: Elegant watercolor illustration, hand-painted feel, soft and dreamy. Every pixel of the canvas must have color — fill corners with flowers, fill gaps with watercolor wash. No photorealistic faces. No empty white space anywhere.`;
 
