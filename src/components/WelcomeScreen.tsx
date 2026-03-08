@@ -2,6 +2,8 @@ import React from "react";
 import { motion } from "framer-motion";
 import { Sparkles } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import exampleCard1 from "@/assets/example-card-1.png";
+import exampleCard2 from "@/assets/example-card-2.png";
 
 interface WelcomeScreenProps {
   onStart: () => void;
