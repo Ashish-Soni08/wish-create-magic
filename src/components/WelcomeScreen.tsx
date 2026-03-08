@@ -2,9 +2,6 @@ import React from "react";
 import { motion } from "framer-motion";
 import { Sparkles } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import exampleCard1 from "@/assets/example-card-1.png";
-import exampleCard2 from "@/assets/example-card-2.png";
-import exampleCard3 from "@/assets/example-card-3.png";
 import exampleCard4 from "@/assets/example-card-4.png";
 import exampleCard5 from "@/assets/example-card-5.png";
 import exampleCard6 from "@/assets/example-card-6.png";
@@ -13,6 +10,9 @@ import exampleCard8 from "@/assets/example-card-8.png";
 import exampleCard9 from "@/assets/example-card-9.png";
 import exampleCard10 from "@/assets/example-card-10.png";
 import exampleCard11 from "@/assets/example-card-11.png";
+import exampleCard12 from "@/assets/example-card-12.png";
+import exampleCard13 from "@/assets/example-card-13.png";
+import exampleCard14 from "@/assets/example-card-14.png";
 
 interface WelcomeScreenProps {
   onStart: () => void;
