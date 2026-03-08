@@ -39,10 +39,6 @@ const WelcomeScreen: React.FC<WelcomeScreenProps> = ({ onStart }) => {
       <FloatingPetal delay={2.2} x="85%" size={16} />
       <FloatingPetal delay={4} x="40%" size={9} />
 
-      {/* Decorative circles */}
-      <div className="absolute top-10 right-10 w-32 h-32 rounded-full bg-lavender/10 blur-2xl" />
-      <div className="absolute bottom-20 left-10 w-48 h-48 rounded-full bg-rose/10 blur-3xl" />
-      <div className="absolute top-1/3 left-1/4 w-24 h-24 rounded-full bg-gold/10 blur-xl" />
 
       <motion.div
         className="relative z-10 text-center max-w-2xl"
