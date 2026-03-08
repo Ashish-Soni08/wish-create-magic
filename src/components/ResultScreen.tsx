@@ -1,7 +1,9 @@
-import React, { useCallback } from "react";
-import { motion } from "framer-motion";
-import { Download, RotateCcw, RefreshCw } from "lucide-react";
+import React, { useCallback, useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import { Download, RotateCcw, RefreshCw, Check } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { supabase } from "@/integrations/supabase/client";
+import { toast } from "@/hooks/use-toast";
 
 interface ResultScreenProps {
   imageUrl: string;
@@ -12,6 +14,9 @@ interface ResultScreenProps {
 }
 
 const ResultScreen: React.FC<ResultScreenProps> = ({ imageUrl, name, message, onReset, onRetry }) => {
+  const [showGalleryPrompt, setShowGalleryPrompt] = useState(false);
+  const [savedToGallery, setSavedToGallery] = useState(false);
+
   const handleDownload = useCallback(() => {
     const link = document.createElement("a");
     link.href = imageUrl;
@@ -19,7 +24,35 @@ const ResultScreen: React.FC<ResultScreenProps> = ({ imageUrl, name, message, on
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
-  }, [imageUrl, name]);
+
+    // Show gallery prompt after download if not already saved
+    if (!savedToGallery) {
+      setShowGalleryPrompt(true);
+    }
+  }, [imageUrl, name, savedToGallery]);
+
+  const handleSaveToGallery = async () => {
+    try {
+      const { error } = await supabase.from("gallery_cards").insert({
+        image_url: imageUrl,
+        name,
+      });
+      if (error) throw error;
+      setSavedToGallery(true);
+      setShowGalleryPrompt(false);
+      toast({
+        title: "Added to gallery! 🎉",
+        description: "Your card will now inspire others on the home page.",
+      });
+    } catch (err: any) {
+      console.error("Gallery save error:", err);
+      toast({
+        title: "Couldn't save to gallery",
+        description: err.message || "Please try again.",
+        variant: "destructive",
+      });
+    }
+  };
 
   return (
     <div className="min-h-screen flex flex-col items-center justify-center px-4 py-10">
@@ -50,12 +83,42 @@ const ResultScreen: React.FC<ResultScreenProps> = ({ imageUrl, name, message, on
           />
         </motion.div>
 
+        {/* Gallery permission prompt */}
+        <AnimatePresence>
+          {showGalleryPrompt && (
+            <motion.div
+              className="mb-6 p-4 rounded-xl bg-muted border border-border"
+              initial={{ opacity: 0, y: -10 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -10 }}
+            >
+              <p className="text-sm text-foreground mb-3">
+                🌟 Would you like to add this card to our public gallery to inspire others?
+              </p>
+              <div className="flex gap-3 justify-center">
+                <Button size="sm" onClick={handleSaveToGallery} className="rounded-full">
+                  Yes, share it!
+                </Button>
+                <Button size="sm" variant="ghost" onClick={() => setShowGalleryPrompt(false)} className="rounded-full">
+                  No thanks
+                </Button>
+              </div>
+            </motion.div>
+          )}
+        </AnimatePresence>
+
         {/* Actions */}
         <div className="flex gap-4 justify-center flex-wrap">
           <Button onClick={handleDownload} size="lg" className="px-8 py-5 rounded-full">
             <Download className="mr-2 h-5 w-5" />
             Download Card
           </Button>
+          {savedToGallery && (
+            <Button variant="secondary" size="lg" className="px-8 py-5 rounded-full pointer-events-none opacity-70">
+              <Check className="mr-2 h-5 w-5" />
+              In Gallery
+            </Button>
+          )}
           <Button onClick={onRetry} variant="secondary" size="lg" className="px-8 py-5 rounded-full">
             <RefreshCw className="mr-2 h-5 w-5" />
             Try Again
