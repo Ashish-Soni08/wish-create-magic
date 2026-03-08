@@ -181,3 +181,6 @@ This app was built iteratively through conversation in Lovable:
 ---
 
 Built with ❤️ using [Lovable](https://lovable.dev)
+
+[![Prompted by Ashish Soni](https://img.shields.io/badge/Prompted%20by-Ashish%20Soni-ff69b4?style=for-the-badge)](https://github.com/ashishsoni)
+[![Built on Lovable](https://img.shields.io/badge/Built%20on-Lovable-blueviolet?style=for-the-badge)](https://lovable.dev)
