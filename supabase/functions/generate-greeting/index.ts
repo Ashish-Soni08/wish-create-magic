@@ -19,16 +19,23 @@ serve(async (req) => {
 
     // Build a rich prompt from the user's answers
     const traitStr = (traits as string[]).join(", ");
-    const prompt = `Create a beautiful artistic illustrated International Women's Day greeting card. 
-The card is for a ${relationship} named "${name}". 
-She is known for being ${traitStr}. 
-Include ${flower} flowers prominently in the design.
-Use a ${colorPalette} color palette.
-The style should be elegant watercolor illustration with floral motifs, artistic and hand-painted feel.
-Include the text "Happy Women's Day" in elegant typography.
-Include the name "${name}" on the card.
-${message ? `The card should convey the feeling: "${message}"` : ""}
-Make it warm, celebratory, and empowering. No photorealistic faces.`;
+    const prompt = `Create a beautiful artistic illustrated International Women's Day greeting card as a SQUARE image (1:1 aspect ratio).
+
+CRITICAL REQUIREMENTS:
+- The ENTIRE background must be fully covered — no white gaps, no blank corners, no empty edges.
+- Use a soft watercolor wash across the FULL background in ${colorPalette} tones.
+- Place large ${flower} flower arrangements in ALL FOUR corners, with petals and leaves extending to the very edges.
+- Scatter small flower buds, petals, and delicate leaves across any remaining background space.
+
+DESIGN:
+- In the center, place a circular floral wreath made of ${flower} flowers.
+- Inside the wreath, write "${name}" in elegant script at the top.
+- Below the name, write "Happy Women's Day" in bold elegant serif typography.
+- Below that, write "${relationship}" in smaller italic script.
+- Below the wreath, write "${traitStr}" in flowing cursive script.
+${message ? `- Somewhere on the card, subtly include: "${message}"` : ""}
+
+STYLE: Elegant watercolor illustration, hand-painted feel, soft and dreamy. Every pixel of the canvas must have color — fill corners with flowers, fill gaps with watercolor wash. No photorealistic faces. No empty white space anywhere.`;
 
     console.log("Generating image with prompt:", prompt);
 
