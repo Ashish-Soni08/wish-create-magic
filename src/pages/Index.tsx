@@ -24,14 +24,8 @@ const Index = () => {
       });
 
       if (error) throw error;
-
-      if (result?.error) {
-        throw new Error(result.error);
-      }
-
-      if (!result?.imageUrl) {
-        throw new Error("No image was generated. Please try again.");
-      }
+      if (result?.error) throw new Error(result.error);
+      if (!result?.imageUrl) throw new Error("No image was generated. Please try again.");
 
       setImageUrl(result.imageUrl);
       setState("result");
@@ -44,6 +38,10 @@ const Index = () => {
       });
       setState("wizard");
     }
+  };
+
+  const handleRetry = () => {
+    if (formData) handleGenerate(formData);
   };
 
   const handleReset = () => {
