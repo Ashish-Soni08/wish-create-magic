@@ -90,8 +90,8 @@ const WelcomeScreen: React.FC<WelcomeScreenProps> = ({ onStart }) => {
           <p className="text-sm font-display text-muted-foreground mb-6 uppercase tracking-widest">
             ✨ Examples of AI-generated cards
           </p>
-          <div className="grid grid-cols-2 gap-4 md:gap-6">
-            {[exampleCard1, exampleCard2].map((src, i) => (
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-6">
+            {[exampleCard1, exampleCard2, exampleCard3, exampleCard4, exampleCard5, exampleCard6].map((src, i) => (
               <motion.div
                 key={i}
                 className="rounded-xl overflow-hidden shadow-lg border border-border hover:shadow-2xl transition-shadow"
