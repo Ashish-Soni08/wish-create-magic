@@ -93,7 +93,7 @@ const WelcomeScreen: React.FC<WelcomeScreenProps> = ({ onStart }) => {
           ✨ Examples of AI-generated cards
         </p>
         <div className="flex gap-5 overflow-x-auto px-6 pb-4 snap-x snap-mandatory scrollbar-hide">
-          {[exampleCard12, exampleCard13, exampleCard14, exampleCard4, exampleCard5, exampleCard6, exampleCard7, exampleCard8, exampleCard9, exampleCard10, exampleCard11].map((src, i) => (
+          {[exampleCard12, exampleCard13, exampleCard14, exampleCard5, exampleCard7, exampleCard8, exampleCard9, exampleCard10, exampleCard11].map((src, i) => (
             <motion.div
               key={i}
               className="flex-shrink-0 w-56 md:w-64 snap-center rounded-xl overflow-hidden shadow-lg border border-border"
