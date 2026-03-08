@@ -149,7 +149,7 @@ const GreetingWizard: React.FC<GreetingWizardProps> = ({ onSubmit, onBack }) => 
             <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
               {FLOWERS.map((f) => {
                 const emojis: Record<string, string> = {
-                  Rose: "🌹", Sunflower: "🌻", Lily: "🪷", Lavender: "💜",
+                  Rose: "🌹", Sunflower: "🌻", Lily: "💮", Lavender: "💜",
                   Orchid: "🌺", Tulip: "🌷", Peony: "🌸", Dahlia: "🏵️",
                 };
                 return (
