@@ -1,6 +1,6 @@
 import React, { useCallback } from "react";
 import { motion } from "framer-motion";
-import { Download, RotateCcw } from "lucide-react";
+import { Download, RotateCcw, RefreshCw } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 interface ResultScreenProps {
@@ -8,9 +8,10 @@ interface ResultScreenProps {
   name: string;
   message: string;
   onReset: () => void;
+  onRetry: () => void;
 }
 
-const ResultScreen: React.FC<ResultScreenProps> = ({ imageUrl, name, message, onReset }) => {
+const ResultScreen: React.FC<ResultScreenProps> = ({ imageUrl, name, message, onReset, onRetry }) => {
   const handleDownload = useCallback(() => {
     const link = document.createElement("a");
     link.href = imageUrl;
@@ -54,6 +55,10 @@ const ResultScreen: React.FC<ResultScreenProps> = ({ imageUrl, name, message, on
           <Button onClick={handleDownload} size="lg" className="px-8 py-5 rounded-full">
             <Download className="mr-2 h-5 w-5" />
             Download Card
+          </Button>
+          <Button onClick={onRetry} variant="secondary" size="lg" className="px-8 py-5 rounded-full">
+            <RefreshCw className="mr-2 h-5 w-5" />
+            Try Again
           </Button>
           <Button onClick={onReset} variant="outline" size="lg" className="px-8 py-5 rounded-full">
             <RotateCcw className="mr-2 h-5 w-5" />
