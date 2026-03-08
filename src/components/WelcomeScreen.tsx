@@ -4,6 +4,10 @@ import { Sparkles } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import exampleCard1 from "@/assets/example-card-1.png";
 import exampleCard2 from "@/assets/example-card-2.png";
+import exampleCard3 from "@/assets/example-card-3.png";
+import exampleCard4 from "@/assets/example-card-4.png";
+import exampleCard5 from "@/assets/example-card-5.png";
+import exampleCard6 from "@/assets/example-card-6.png";
 
 interface WelcomeScreenProps {
   onStart: () => void;
