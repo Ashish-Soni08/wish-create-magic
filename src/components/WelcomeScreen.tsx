@@ -3,7 +3,6 @@ import { motion } from "framer-motion";
 import { Sparkles } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { supabase } from "@/integrations/supabase/client";
-import exampleCard4 from "@/assets/example-card-4.png";
 import exampleCard5 from "@/assets/example-card-5.png";
 import exampleCard7 from "@/assets/example-card-7.png";
 import exampleCard8 from "@/assets/example-card-8.png";
