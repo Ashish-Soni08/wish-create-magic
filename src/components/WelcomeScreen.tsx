@@ -2,6 +2,8 @@ import React from "react";
 import { motion } from "framer-motion";
 import { Sparkles } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import exampleCard1 from "@/assets/example-card-1.png";
+import exampleCard2 from "@/assets/example-card-2.png";
 
 interface WelcomeScreenProps {
   onStart: () => void;
@@ -72,6 +74,35 @@ const WelcomeScreen: React.FC<WelcomeScreenProps> = ({ onStart }) => {
             <Sparkles className="mr-2 h-5 w-5" />
             Create a Special Greeting
           </Button>
+        </motion.div>
+
+        {/* Example Gallery */}
+        <motion.div
+          className="mt-16 w-full max-w-3xl"
+          initial={{ opacity: 0, y: 40 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.6, duration: 0.7 }}
+        >
+          <p className="text-sm font-display text-muted-foreground mb-6 uppercase tracking-widest">
+            ✨ Examples of AI-generated cards
+          </p>
+          <div className="grid grid-cols-2 gap-4 md:gap-6">
+            {[exampleCard1, exampleCard2].map((src, i) => (
+              <motion.div
+                key={i}
+                className="rounded-xl overflow-hidden shadow-lg border border-border hover:shadow-2xl transition-shadow"
+                whileHover={{ scale: 1.03, y: -4 }}
+                transition={{ type: "spring", stiffness: 300 }}
+              >
+                <img
+                  src={src}
+                  alt={`Example Women's Day greeting card ${i + 1}`}
+                  className="w-full h-auto"
+                  loading="lazy"
+                />
+              </motion.div>
+            ))}
+          </div>
         </motion.div>
       </motion.div>
     </div>
