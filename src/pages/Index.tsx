@@ -63,6 +63,7 @@ const Index = () => {
           name={formData.name}
           message={formData.message}
           onReset={handleReset}
+          onRetry={handleRetry}
         />
       )}
     </>
