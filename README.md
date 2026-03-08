@@ -1,8 +1,11 @@
 # 🌸 Wish Weaver — AI Women's Day Greeting Card Generator
 
+[![Prompted by Ashish Soni](https://img.shields.io/badge/Prompted%20by-Ashish%20Soni-ff69b4?style=for-the-badge)](https://github.com/ashishsoni)
+[![Built on Lovable](https://img.shields.io/badge/Built%20on-Lovable-blueviolet?style=for-the-badge)](https://lovable.dev)
+
 Create personalized, AI-generated International Women's Day greeting cards with a beautiful step-by-step wizard experience.
 
-**🔗 Live App:** [wish-weaver.lovable.app](https://id-preview--4a51156f-2e10-49d9-8151-77630087fa73.lovable.app)
+**🔗 Live App:** [wish-create-magic.lovable.app](https://wish-create-magic.lovable.app)
 
 ---
 
