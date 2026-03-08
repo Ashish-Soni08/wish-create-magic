@@ -4,6 +4,10 @@ import { Sparkles } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import exampleCard1 from "@/assets/example-card-1.png";
 import exampleCard2 from "@/assets/example-card-2.png";
+import exampleCard3 from "@/assets/example-card-3.png";
+import exampleCard4 from "@/assets/example-card-4.png";
+import exampleCard5 from "@/assets/example-card-5.png";
+import exampleCard6 from "@/assets/example-card-6.png";
 
 interface WelcomeScreenProps {
   onStart: () => void;
@@ -86,8 +90,8 @@ const WelcomeScreen: React.FC<WelcomeScreenProps> = ({ onStart }) => {
           <p className="text-sm font-display text-muted-foreground mb-6 uppercase tracking-widest">
             ✨ Examples of AI-generated cards
           </p>
-          <div className="grid grid-cols-2 gap-4 md:gap-6">
-            {[exampleCard1, exampleCard2].map((src, i) => (
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-6">
+            {[exampleCard1, exampleCard2, exampleCard3, exampleCard4, exampleCard5, exampleCard6].map((src, i) => (
               <motion.div
                 key={i}
                 className="rounded-xl overflow-hidden shadow-lg border border-border hover:shadow-2xl transition-shadow"
