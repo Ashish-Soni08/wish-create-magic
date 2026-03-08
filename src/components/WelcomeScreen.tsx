@@ -28,7 +28,7 @@ const FloatingPetal = ({ delay, x, size }: { delay: number; x: string; size: num
 );
 
 const staticCards = [
-  exampleCard12, exampleCard13, exampleCard14, exampleCard4, exampleCard5,
+  exampleCard12, exampleCard13, exampleCard14, exampleCard5,
   exampleCard7, exampleCard8, exampleCard9, exampleCard10, exampleCard11,
 ];
 
